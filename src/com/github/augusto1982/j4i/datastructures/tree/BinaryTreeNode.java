@@ -1,4 +1,4 @@
-package com.github.augusto1982.j4i.datastructures;
+package com.github.augusto1982.j4i.datastructures.tree;
 
 
 /**
