@@ -1,4 +1,4 @@
-package com.github.augusto1982.j4i.datastructures.heap;
+package com.github.augusto1982.betelgeuse.datastructures.heap;
 
 
 import static org.junit.Assert.assertEquals;

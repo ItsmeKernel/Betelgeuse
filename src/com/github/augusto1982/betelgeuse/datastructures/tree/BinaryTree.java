@@ -1,4 +1,4 @@
-package com.github.augusto1982.j4i.datastructures.tree;
+package com.github.augusto1982.betelgeuse.datastructures.tree;
 
 
 /**

@@ -1,15 +1,15 @@
-package com.github.augusto1982.j4i.sorting.test;
+package com.github.augusto1982.betelgeuse.sorting.test;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.github.augusto1982.j4i.sorting.MergeSort;
-import com.github.augusto1982.j4i.sorting.QuickSort;
+import com.github.augusto1982.betelgeuse.sorting.RadixSort;
 
 
 /**
@@ -17,7 +17,7 @@ import com.github.augusto1982.j4i.sorting.QuickSort;
  * @author Augusto Recordon
  *
  */
-public class QuickSortTest {
+public class RadixSortTest {
 
 	/* ********************************************************************* */
 
@@ -45,10 +45,10 @@ public class QuickSortTest {
 	/* ********************************************************************* */
 
 	@Test
-	public void testQuickSort() {
+	public void testRadixSort() {
 		long startTime = System.currentTimeMillis();
 
-		QuickSort sorter = new QuickSort();
+		RadixSort sorter = new RadixSort();
 		sorter.sort(numbers);
 
 		long stopTime = System.currentTimeMillis();
@@ -74,7 +74,7 @@ public class QuickSortTest {
 			for (int a = 0; a < numbers.length; a++) {
 				numbers[a] = generator.nextInt(MAX);
 			}
-			QuickSort sorter = new QuickSort();
+			RadixSort sorter = new RadixSort();
 			sorter.sort(numbers);
 			for (int j = 0; j < numbers.length - 1; j++) {
 				if (numbers[j] > numbers[j + 1]) {

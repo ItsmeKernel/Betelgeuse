@@ -1,4 +1,4 @@
-package com.github.augusto1982.j4i.sorting;
+package com.github.augusto1982.betelgeuse.sorting;
 
 import java.util.LinkedList;
 import java.util.List;

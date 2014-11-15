@@ -1,6 +1,6 @@
-package com.github.augusto1982.j4i.sorting;
+package com.github.augusto1982.betelgeuse.sorting;
 
-import com.github.augusto1982.j4i.datastructures.heap.MinHeap;
+import com.github.augusto1982.betelgeuse.datastructures.heap.MinHeap;
 
 public class HeapSort {
 	

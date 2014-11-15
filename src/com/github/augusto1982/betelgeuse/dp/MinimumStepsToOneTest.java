@@ -1,4 +1,4 @@
-package com.github.augusto1982.j4i.dp;
+package com.github.augusto1982.betelgeuse.dp;
 
 import org.junit.Before;
 import org.junit.Test;

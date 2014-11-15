@@ -1,15 +1,15 @@
-package com.github.augusto1982.j4i.sorting.test;
+package com.github.augusto1982.betelgeuse.sorting.test;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.util.Arrays;
 import java.util.Random;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.github.augusto1982.j4i.sorting.MergeSort;
+import com.github.augusto1982.betelgeuse.sorting.MergeSort;
+import com.github.augusto1982.betelgeuse.sorting.QuickSort;
 
 
 /**
@@ -17,7 +17,7 @@ import com.github.augusto1982.j4i.sorting.MergeSort;
  * @author Augusto Recordon
  *
  */
-public class MergeSortTest {
+public class QuickSortTest {
 
 	/* ********************************************************************* */
 
@@ -45,10 +45,10 @@ public class MergeSortTest {
 	/* ********************************************************************* */
 
 	@Test
-	public void testMergeSort() {
+	public void testQuickSort() {
 		long startTime = System.currentTimeMillis();
 
-		MergeSort sorter = new MergeSort();
+		QuickSort sorter = new QuickSort();
 		sorter.sort(numbers);
 
 		long stopTime = System.currentTimeMillis();
@@ -74,7 +74,7 @@ public class MergeSortTest {
 			for (int a = 0; a < numbers.length; a++) {
 				numbers[a] = generator.nextInt(MAX);
 			}
-			MergeSort sorter = new MergeSort();
+			QuickSort sorter = new QuickSort();
 			sorter.sort(numbers);
 			for (int j = 0; j < numbers.length - 1; j++) {
 				if (numbers[j] > numbers[j + 1]) {
