@@ -17,6 +17,7 @@ public class HeapSort {
 		for(int i = 0; i < numbers.length; i++){
 			numbers[i] = heap.top();
 		}
+		
 	}
 
 }
