@@ -4,9 +4,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 
-
+/**
+ * 
+ * @author Augusto Recordon
+ *
+ */
 public class RadixSort {
 	
+	/* ********************************************************************* */
 	
 	private List[] createEmptyBuckets(){
 		List[] buckets = new List[10];
@@ -15,6 +20,8 @@ public class RadixSort {
 		}
 		return buckets;
 	}
+	
+	/* ********************************************************************* */
 	
 	private List[] splitByDigit(int[] numbers, int digit){
 		List[] buckets = this.createEmptyBuckets();
@@ -27,6 +34,8 @@ public class RadixSort {
 		return buckets;
 	}
 	
+	/* ********************************************************************* */
+	
 	private void copyArray(int[] numbers, List[] buckets){
 		int position = 0;
 		for(int i = 0; i <= 9; i++){
@@ -38,6 +47,8 @@ public class RadixSort {
 		}
 	}
 	
+	/* ********************************************************************* */
+	
 	private void sort(int[] numbers, int digit, int maxLength){
 		if(digit < maxLength){
 			List[] buckets = this.splitByDigit(numbers, digit);
@@ -47,10 +58,13 @@ public class RadixSort {
 		
 	}
 	
+	/* ********************************************************************* */
+	
 	public void sort(int[] numbers){
 		this.sort(numbers, 0, 3);
 	}
 	
+	/* ********************************************************************* */
 	
 
 }
