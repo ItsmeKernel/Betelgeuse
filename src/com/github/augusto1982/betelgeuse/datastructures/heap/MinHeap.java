@@ -3,6 +3,11 @@ package com.github.augusto1982.betelgeuse.datastructures.heap;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author Augusto Recordon
+ *
+ */
 public class MinHeap<T extends Comparable> {
 	
 	/* ********************************************************************* */

@@ -1,5 +1,11 @@
 package com.github.augusto1982.betelgeuse.datastructures.heap;
 
+
+/**
+ * 
+ * @author Augusto Recordon
+ *
+ */
 public class MaxHeap<T> extends MinHeap<Comparable>{
 
 	@Override

@@ -41,8 +41,11 @@ public class AdjacencyMatrixGraph<T> implements Graph<T> {
 	/* ********************************************************************* */
 	
 	@Override
-	public void addVertex(T data) {
-		// TODO Auto-generated method stub
+	public boolean addVertex(T data) {
+		boolean inserted = this.length < this.vertices.length;
+		this.vertices[this.length] = new VertexImpl(data);
+		this.length++;
+		return inserted;
 		
 	}
 	

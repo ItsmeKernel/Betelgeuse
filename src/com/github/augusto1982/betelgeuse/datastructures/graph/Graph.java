@@ -15,7 +15,7 @@ public interface Graph<T> {
 	 * 
 	 * @param data
 	 */
-	public void addVertex(T data);
+	public boolean addVertex(T data);
 	
 	/* ********************************************************************* */
 	

@@ -5,6 +5,11 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+/**
+ * 
+ * @author Augusto Recordon
+ *
+ */
 public class MaxHeapTest {
 	
 	@Test
