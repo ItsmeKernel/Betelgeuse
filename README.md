@@ -28,3 +28,7 @@ This project provides data structures implementation (such as Heaps, Trees and G
  * Bucket Sort _to do_
  * Counting Sort _to do_
  * Radix Sort
+
+<h2>Problems</h2>
+<h4>Dynamic Programming</h4>
+* <a href="https://github.com/augusto1982/Betelgeuse/wiki/DP---Minimum-Steps-to-One">Minimum Steps to One</a>: Implementation using Memoization and DP.
