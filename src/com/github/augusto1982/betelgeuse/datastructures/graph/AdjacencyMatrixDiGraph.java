@@ -3,10 +3,12 @@ package com.github.augusto1982.betelgeuse.datastructures.graph;
 /**
  * 
  * @author Augusto Recordon
+ * 
+ * Simple digraph implementation using Adjacency Matrix.
  *
  * @param <T>
  */
-public class AdjacencyMatrixGraph<T> implements Graph<T> {
+public class AdjacencyMatrixDiGraph<T> implements Digraph<T> {
 	
 	/* ********************************************************************* */
 	
@@ -26,13 +28,13 @@ public class AdjacencyMatrixGraph<T> implements Graph<T> {
 	
 	/* ********************************************************************* */
 	
-	public AdjacencyMatrixGraph(){
-		this(AdjacencyMatrixGraph.DEFAULT_MAX_SIZE);
+	public AdjacencyMatrixDiGraph(){
+		this(AdjacencyMatrixDiGraph.DEFAULT_MAX_SIZE);
 	}
 	/* ********************************************************************* */
 	
 	@SuppressWarnings("unchecked")
-	public AdjacencyMatrixGraph(int size){
+	public AdjacencyMatrixDiGraph(int size){
 		super();
 		this.vertices = new Vertex[size];
 		this.length = 0;
@@ -43,11 +45,36 @@ public class AdjacencyMatrixGraph<T> implements Graph<T> {
 	@Override
 	public boolean addVertex(T data) {
 		boolean inserted = this.length < this.vertices.length;
-		this.vertices[this.length] = new VertexImpl(data);
+		this.vertices[this.length] = new VertexImpl<T>(data);
 		this.length++;
 		return inserted;
 		
 	}
+	
+	/* ********************************************************************* */
+	
+	protected int indegree(int vertexPosition){
+		int total = 0;
+		for(int i = 0; i < this.length; i++){
+			if(this.adjacencies[i][vertexPosition] > 0){
+				total++;
+			}
+		}
+		return total;
+	}
+	
+	/* ********************************************************************* */
+	
+	protected int outdegree(int vertexPosition){
+		int total = 0;
+		for(int i = 0; i < this.length; i++){
+			if(this.adjacencies[vertexPosition][i] > 0){
+				total++;
+			}
+		}
+		return total;
+	}
+	
 	
 	/* ********************************************************************* */
 	
@@ -83,6 +110,42 @@ public class AdjacencyMatrixGraph<T> implements Graph<T> {
 		
 	}
 
+	/* ********************************************************************* */
+	
+	protected boolean[] initializeVisited(){
+		boolean[] visited = new boolean[this.length];
+		for(int i = 0; i < this.length; i++){
+			visited[i] = false;
+		}
+		return visited;
+		
+	}
+	
+	/* ********************************************************************* */
+	
+	
+	protected void dfs(){
+		boolean[] visited = this.initializeVisited();
+		for(int i = 0; i < this.length; i++){
+			this.dfs(i, visited);
+		}
+		
+	}
+	
+	/* ********************************************************************* */
+	
+	protected void dfs(int position, boolean[] visited){
+		if(!visited[position]){
+			visited[position] = true;
+			for(int i = 0; i < this.length; i++){
+				if(this.adjacencies[position][i] > 0){
+					this.dfs(i, visited);
+				}
+			}
+			visited[position] = false;
+		}
+	}
+	
 	/* ********************************************************************* */
 	
 	@Override
