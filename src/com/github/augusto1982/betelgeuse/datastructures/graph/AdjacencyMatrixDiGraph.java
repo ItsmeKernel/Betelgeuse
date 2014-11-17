@@ -1,5 +1,9 @@
 package com.github.augusto1982.betelgeuse.datastructures.graph;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
+
 /**
  * 
  * @author Augusto Recordon
@@ -123,8 +127,42 @@ public class AdjacencyMatrixDiGraph<T> implements Digraph<T> {
 	
 	/* ********************************************************************* */
 	
+	public void bfs(){
+		for(int i = 0; i < this.vertices.length; i++){
+			Queue<Integer> queue = new LinkedList<Integer>();
+			boolean[] visited = this.initializeVisited();
+			int level = 0;
+			if(!visited[i]){
+				queue.offer(i);
+				queue.offer(-1);
+			}
+			while(!(queue.isEmpty())){
+				int element = queue.poll();
+				if(element == -1){
+					level++;
+					if(!queue.isEmpty()){
+						queue.offer(-1);
+					}
+				}else{
+					if(!visited[element]){
+						visited[element] = true;
+						for(int j = 0; j < this.length; j++){
+							if(this.adjacencies[element][j] > 0){
+								queue.offer(j);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+	}
 	
-	protected void dfs(){
+	
+	/* ********************************************************************* */
+	
+	
+	public void dfs(){
 		boolean[] visited = this.initializeVisited();
 		for(int i = 0; i < this.length; i++){
 			this.dfs(i, visited);
@@ -145,6 +183,58 @@ public class AdjacencyMatrixDiGraph<T> implements Digraph<T> {
 			visited[position] = false;
 		}
 	}
+	
+	/* ********************************************************************* */
+	
+	protected int[] dijkstra(int initialIndex){
+		boolean[] visited = new boolean[this.length];
+		int[] costs = new int[this.length];
+		int[] previous = new int[this.length];
+		for(int i = 0; i < this.length; i++){
+			visited[i] = false;
+			costs[i] = Integer.MAX_VALUE;
+			previous[i] = -1;
+		}
+		costs[initialIndex] = 0;
+		
+		for(int i = 0; i < this.length; i++){
+			int current = this.getMinDistance(costs, visited);
+			if(current > -1){
+				visited[current] = true;
+				for(int j = 0; j < this.length; j++){
+					if(this.adjacencies[current][j] > 0){
+						int distance = costs[current] + this.adjacencies[current][j];
+						if(distance < costs[j]){
+							costs[j] = distance;
+							previous[j] = current;
+						}
+					}
+				}
+			}
+		}
+		return previous;
+	}
+	
+	/* ********************************************************************* */
+	
+	protected int[] dijkstra(){
+		return this.dijkstra(0);
+	}
+	
+	/* ********************************************************************* */
+	
+	protected int getMinDistance(int[] costs, boolean[] visited){
+		int position = -1;
+		int minCost = Integer.MAX_VALUE;
+		for(int i = 0; i < this.length; i++){
+			if((!visited[i]) && (costs[i] < minCost)){
+				minCost = costs[i];
+				position = i;
+			}
+		}
+		return position;
+	}
+	
 	
 	/* ********************************************************************* */
 	
