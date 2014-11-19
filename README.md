@@ -35,5 +35,5 @@ This project provides data structures implementation (such as Heaps, Trees and G
 * <a href="https://github.com/augusto1982/Betelgeuse/wiki/Fombinatorial-(Code-Chef-Challenge)">Fombinatorial</a>
 
 <h4>Bit Manipulation</h4>
-* <a href="https://github.com/augusto1982/Betelgeuse/wiki/Paying-Up">Paying Up</a>: Implementation shifting operations.
+* <a href="https://github.com/augusto1982/Betelgeuse/wiki/Paying-Up">Paying Up</a>: Implementation using shifting operations.
 
