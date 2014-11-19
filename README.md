@@ -32,3 +32,7 @@ This project provides data structures implementation (such as Heaps, Trees and G
 <h2>Problems</h2>
 <h4>Dynamic Programming</h4>
 * <a href="https://github.com/augusto1982/Betelgeuse/wiki/DP---Minimum-Steps-to-One">Minimum Steps to One</a>: Implementation using Memoization and DP.
+
+<h4>Bit Manipulation</h4>
+* <a href="https://github.com/augusto1982/Betelgeuse/wiki/Paying-Up">Paying Up</a>: Implementation using Memoization and DP.
+
