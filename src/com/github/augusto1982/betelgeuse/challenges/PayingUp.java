@@ -62,14 +62,4 @@ public class PayingUp {
 		}
 	}
 	
-	public static void main(String[] args){
-		String[] input = {
-				"3 3",
-				"10",
-				"1",
-				"1"
-		};
-		System.out.println(new PayingUp().payUp(input));
-	}
-
 }
