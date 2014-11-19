@@ -127,6 +127,43 @@ public class AdjacencyMatrixDiGraph<T> implements Digraph<T> {
 	
 	/* ********************************************************************* */
 	
+	protected void topologicalSort(){
+		int[] indegrees = this.buildIndegree();
+		int index = this.findFirstZeroIndegree(indegrees);
+		while(index == 0){
+			indegrees[index] = -1;
+			for(int i = 0; i < this.length; i++){
+				if(this.adjacencies[index][i] > 0){
+					indegrees[i]--;
+				}
+			}
+			index = this.findFirstZeroIndegree(indegrees);
+		}
+	}
+	
+	/* ********************************************************************* */
+	
+	protected int findFirstZeroIndegree(int[] indegrees){
+		for(int i = 0; i < this.length; i++){
+			if(indegrees[i] == 0){
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	/* ********************************************************************* */
+	
+	protected int[] buildIndegree(){
+		int[] indegrees = new int[this.length];
+		for(int i = 0; i < this.length; i++){
+			indegrees[i] = this.indegree(i);
+		}
+		return indegrees;
+	}
+	
+	/* ********************************************************************* */
+	
 	public void bfs(){
 		for(int i = 0; i < this.vertices.length; i++){
 			Queue<Integer> queue = new LinkedList<Integer>();
@@ -157,6 +194,11 @@ public class AdjacencyMatrixDiGraph<T> implements Digraph<T> {
 		}
 		
 	}
+	
+	/* ********************************************************************* */
+	
+	
+	
 	
 	
 	/* ********************************************************************* */
