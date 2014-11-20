@@ -36,4 +36,5 @@ This project provides data structures implementation (such as Heaps, Trees and G
 
 <h4>Bit Manipulation</h4>
 * <a href="https://github.com/augusto1982/Betelgeuse/wiki/Paying-Up">Paying Up</a>: Implementation using shifting operations.
+* <a href="https://github.com/augusto1982/Betelgeuse/wiki/Byteknights-and-Byteknaves">Byteknights and Byteknaves</a>: Implementation using shifting operations.
 
