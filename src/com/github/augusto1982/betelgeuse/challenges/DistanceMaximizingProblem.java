@@ -3,6 +3,8 @@ package com.github.augusto1982.betelgeuse.challenges;
 /**
  * 
  * @author Augusto Recordon
+ * 
+ * Reference: http://leetcode.com/2011/05/a-distance-maximizing-problem.html
  *
  */
 public class DistanceMaximizingProblem{

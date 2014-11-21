@@ -3,6 +3,8 @@ package com.github.augusto1982.betelgeuse.challenges;
 /**
  * 
  * @author Augusto Recordon
+ * 
+ * Reference: http://leetcode.com/2011/08/reverse-bits.html
  *
  */
 public class BitsReverser {
